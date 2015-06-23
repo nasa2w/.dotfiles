@@ -38,6 +38,17 @@ set number
 set mouse=a
 set hlsearch
 
+ " set title
+let &titlestring = hostname() . ": " . expand("%:~")
+if &term == "screen"
+  set t_ts=^[k
+  set t_fs=^[\
+endif
+"if &term == "screen" || &term == "xterm"
+  set title
+"endif
+
+
  " for lightLine 
 set laststatus=2
 

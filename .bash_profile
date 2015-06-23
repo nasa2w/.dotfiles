@@ -22,3 +22,5 @@ else
   export PS1='\[\e[36m\]\u@\h:\w\[\e[0m\] $ '
 fi
 
+
+export PATH=$HOME/.nodebrew/current/bin:$PATH
