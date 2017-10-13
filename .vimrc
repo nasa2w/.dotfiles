@@ -19,7 +19,8 @@ if has('vim_starting')
  NeoBundle 'itchyny/lightLine.vim'
  " NeoBundle 'nathanaelkane/vim-indent-guides'
  NeoBundle 'Yggdroot/indentLine'
-
+ " for coffee script
+ NeoBundle 'kchmck/vim-coffee-script'
 
 
  call neobundle#end()
