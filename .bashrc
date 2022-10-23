@@ -122,10 +122,6 @@ fi
 # asdf
 . $HOME/.asdf/asdf.sh
 
-# fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export FZF_DEFAULT_OPTS="--layout=reverse --height=60%"
-
 # git completion と PS1 のカスタマイズ
 if git --version > /dev/null 2>&1 ; then
   # for Linux. dpkg -L git
@@ -143,12 +139,4 @@ if git --version > /dev/null 2>&1 ; then
   pattern='\\\$'
   PS1=`echo $PS1 | sed -e "s:$pattern::" -e "s:$:$pattern :"`
 fi
-
-# git grep の結果を fzf でインクリメンタルサーチして行数の箇所 vi で開く
-function ggv () {
-	line=`git grep -n $1 | fzf`
-	file=`echo $line | awk -F ':' '{print $1}'`
-	lnum=`echo $line | awk -F ':' '{print $2}'`
-	command vi ${file} +${lnum}
-}
 
